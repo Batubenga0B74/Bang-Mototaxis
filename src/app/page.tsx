@@ -1,6 +1,7 @@
+import Faq from "@/component/Faqs";
 import Counter from "@/component/FeactureCount";
 import FeatureCards from "@/component/FeatureCards";
-
+import Footer from "@/component/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,11 +24,8 @@ export default function Home() {
         <FeatureCards/>
       </section>
       <Counter/>
-      
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-       
-      
-      </footer>
+      <Faq/>
+      <Footer/>
     </div>
   );
 }

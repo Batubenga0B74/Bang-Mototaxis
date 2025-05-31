@@ -2,10 +2,10 @@
 import CountUp from 'react-countup';
 export default function Counter(){
     return(
-  <div className="w-full h-[390px]  bg-[#142a63c7] items-center justify-center flex gap-8 flex-col">
+    <div className="w-full h-[390px]   bg-[#203977]  items-center justify-center flex gap-8 flex-col py-10">
 
-
-      <div className="w-full h-[320px]  bg-[#142a63c7] items-center justify-center flex gap-8 ">
+        <h2 className='text-white text-3xl font-semibold'>Números que Impressionam</h2>
+      <div className="w-full h-[300px]  bg-[#142a63c7] items-center justify-center flex gap-8 ">
 
             <div className="w-[500px] h-[200px] bg-[#203977] rounded-lg shadow-lg flex flex-col items-center justify-center">
             
@@ -49,8 +49,7 @@ export default function Counter(){
                   />
                    <p className="text-sm font-medium text-gray-500 mb-2">satisfaçºoes dos clientes </p>
               </div>
-            </div>
-
-        </div>
+     </div>
+    </div>
     )
 }
