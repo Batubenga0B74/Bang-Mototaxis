@@ -5,7 +5,7 @@ export default function Counter(){
     <div className="w-full h-[390px]   bg-[#203977]  items-center justify-center flex gap-8 flex-col py-10">
 
         <h2 className='text-white text-3xl font-semibold'>Números que Impressionam</h2>
-      <div className="w-full h-[300px]  bg-[#142a63c7] items-center justify-center flex gap-8 ">
+      <div className="w-full h-[300px]   items-center justify-center flex gap-8 ">
 
             <div className="w-[500px] h-[200px] bg-[#203977] rounded-lg shadow-lg flex flex-col items-center justify-center">
             

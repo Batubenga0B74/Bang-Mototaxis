@@ -11,7 +11,7 @@ export default function Header(){
                     <li>Benefícios</li>
                     <li>FAQ</li>
                 </div>
-            <Link href="#" className="w-[158px] h-[40px] bg-[#dc2626] items-center justify-center flex rounded-full text-white font-bold text-xs">Torne-se Bang</Link>
+            <Link href="/Register-motors" className="w-[158px] h-[40px] bg-[#dc2626] items-center justify-center flex rounded-full text-white font-bold text-xs">Torne-se Bang</Link>
 
             </header>
         </div>
