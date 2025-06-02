@@ -1,3 +1,4 @@
+import NextStepCard from "@/component/NextStepCard"
 export default function RegisterMotors(){
     return(
         <div className="w-full h-screen bg-[#142b63] justify-center items-center flex flex-col gap-4">
@@ -9,36 +10,36 @@ export default function RegisterMotors(){
                 <form className="flex">
                     <div className="w-1/2 h-[200px] gap-4 flex flex-col">
                         <div className="w-full h-18 items-center p-4 flex-col">
-                            <label>Nome completo*</label>
-                            <input type="text" placeholder="Digite seu nome completo"  className="border w-full h-8 px-2"/>
+                            <label className="text-blue-600">Nome completo*</label>
+                            <input type="text" placeholder="Digite seu nome completo"  className="border w-full h-10 px-2 rounded-xl" id="nome"/>
                         </div>
                         <div className="w-full h-18 items-center p-4 flex-col">
-                            <label>Número da Matrícula*</label>
-                            <input type="text" placeholder="Ex:LD-00-00AA" className="outline-blue-800 rounded-xs border w-full px-2 h-8" />
+                            <label className="text-orange-300">Número da Matrícula*</label>
+                            <input type="text" placeholder="Ex:LD-00-00AA" className="outline-blue-800  border w-full px-2 h-10 rounded-xl" id="Matricula"/>
                         </div>
                         <div className="w-full h-18 items-center p-4 flex-col">
-                            <label>Número de Telefone*</label>
-                            <input type="text" placeholder="900 000 000" className="border w-full h-8 px-2" />
+                            <label className="text-green-600">Número de Telefone*</label>
+                            <input type="text" placeholder="900 000 000" className="border w-full h-10 px-2 rounded-xl"  id="telefone"/>
                         </div>
                     </div>
                     <div className="w-1/2 h-[200px] gap-4 flex flex-col">
                         <div className="w-full h-18 items-center p-4 flex-col">
-                            <label>Marca da Moto *</label>
-                            <input type="text" placeholder="Ex:Honda,yamaha,suziki"  className="border w-full h-8 px-2"/>
+                            <label className="text-green-600">Marca da Moto *</label>
+                            <input type="text" placeholder="Ex:Honda,yamaha,suziki"  className="border w-full h-10 px-2 rounded-xl" id="Marca"/>
                         </div>
                         <div className="w-full h-18 items-center p-4 flex-col">
-                            <label>Número do BI *</label>
-                            <input type="text" placeholder="Digite o numero do seu BI" className="outline-blue-800 rounded-xs border w-full px-2 h-8" />
+                            <label className="text-blue-800" id="BI">Número do BI *</label>
+                            <input type="text" placeholder="Digite o numero do seu BI" className="outline-blue-800  border w-full px-2 h-10 rounded-xl" />
                         </div>
                         <div className="w-full h-18 items-center p-4 flex-col">
-                            <label>Email *</label>
-                            <input type="text" placeholder="seu@email.com" className="border w-full h-8 px-2" />
+                            <label className="text-orange-400" id="email">Email *</label>
+                            <input type="text" placeholder="seu@email.com" className="border w-full h-10 px-2 rounded-xl" />
                         </div>
                     </div>
                 </form>
-                <button className="w-full h-10 bg-amber-700 rounded-3xl">Enviar</button>
-                <div className="w-full bg-amber-300 h-[100px] rounded-2xl">
-
+                <button className="w-full h-10  bg-yellow-600  text-white rounded-3xl">Enviar</button>
+                <div className="w-full bg-yellow-50 h-[100px] rounded-2xl">
+                    <NextStepCard/>
                 </div>
              </main>
         </div>

@@ -5,7 +5,7 @@ export default function Header(){
     return(
         <div className="w-ful h-[62px] justify-center items-center flex">
             <header className="h-[62px] w-[1357] items-center flex justify-between">
-                <Image alt="logo" src={Logo} className="w-[150px] "/>
+                <Link href="/"><Image alt="logo" src={Logo} className="w-[150px]  " /></Link> 
                 <div className=" w-[400px] h-full flex list-none gap-6 items-center justify-center text-[#4b5563]" >
                     <li>início</li>
                     <li>Benefícios</li>
