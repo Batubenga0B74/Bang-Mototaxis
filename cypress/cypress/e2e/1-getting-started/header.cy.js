@@ -11,5 +11,8 @@ describe('Header', () => {
     cy.get('li').first().should('have.text', 'início');
     cy.get('li').eq(1).should('have.text','Benefícios')
     cy.get('li').eq(2).should('have.text','FAQ')
+    cy.contains('Torne-se Bang').should('exist');
+
   });
 });
+//.should() é um comando do Cypress que permite afirmar que um elemento possui determinadas características ou comportamentos

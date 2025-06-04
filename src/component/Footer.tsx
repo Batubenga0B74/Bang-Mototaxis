@@ -13,7 +13,7 @@ export default function Footer() {
             Cadastre-se agora e comece a trabalhar como mototaxista legalizado em menos de 48 horas.
           </p>
           <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 font-semibold py-3 px-6 rounded-full shadow-md hover:opacity-90 transition">
-            Torne-se Bang Agora
+            Assine com a bang
           </button>
         </div>
 
