@@ -6,9 +6,8 @@ export default function Header() {
   return (
     <div className="w-full h-[62px] flex justify-center items-center">
       <header className="h-[62px] w-[1357px] flex items-center justify-between">
-        <Link href="#">
+        <Link href="/">
             <Image alt="logo" src={Logo} width={150} height={62} />
-            {/* <img src={Logo} alt="logo"  width={150} height={62} />  */}
         </Link>
         <ul className="w-[400px] h-full flex list-none gap-6 items-center justify-center text-[#4b5563]">
           <li>início</li>

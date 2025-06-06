@@ -34,3 +34,72 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+===================================================================================================================================
+// src/component/__test__/FeatureCards.test.tsx
+
+import React from 'react';
+import { render, screen, within } from "@testing-library/react";
+import '@testing-library/jest-dom';
+import Counter from "../FeactureCount"; // Corrija o caminho se necessário
+
+// Mock do react-countup para retornar um valor formatado fixo
+jest.mock('react-countup', () => {
+  return function MockCountUp({ end, separator, decimal }: { end: number; separator?: string; decimal?: string }) {
+    const formattedEnd = end.toLocaleString('pt-BR', {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1,
+    });
+
+    const finalDisplay = formattedEnd
+      .replace(/\./g, separator || '.')
+      .replace(/,/g, decimal || ',');
+
+    return <span data-testid="countup-mock-value">{finalDisplay}</span>;
+  };
+});
+
+describe("Counter", () => {
+  beforeEach(() => {
+    render(<Counter />);
+  });
+
+  it("exibe corretamente o valor e o texto: Mototaxistas registados", () => {
+    const section = screen.getByText('Mototaxistas registados').closest('div');
+    const value = within(section!).getByTestId('countup-mock-value');
+    expect(value).toHaveTextContent('25.000,0');
+  });
+
+  it("exibe corretamente o valor e o texto: corridas Realizadas", () => {
+    const section = screen.getByText('corridas Realizadas').closest('div');
+    const value = within(section!).getByTestId('countup-mock-value');
+    expect(value).toHaveTextContent('50.000,0');
+  });
+
+  it("exibe corretamente o valor e o texto: satisfaçºoes dos clientes", () => {
+    const section = screen.getByText('satisfaçºoes dos clientes').closest('div');
+    const value = within(section!).getByTestId('countup-mock-value');
+    expect(value).toHaveTextContent('70,0');
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
