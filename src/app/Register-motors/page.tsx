@@ -2,7 +2,7 @@
 
 import NextStepCard from "@/component/NextStepCard"
 import { api } from "@/service/api"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useTransition } from "react"
 
 export default function RegisterMotors() {
@@ -13,50 +13,76 @@ export default function RegisterMotors() {
     const [matricula, setmatricula] = useState("")
     const [nome, setnome] = useState("")
     const [mensagem, setMensagem] = useState("")
+    const [tipoMensagem, setTipoMensagem] = useState<"sucesso" | "erro" | "">("")
     const [isPending, startTransition] = useTransition()
+
+    useEffect(() => {
+        if (mensagem) {
+            const timeout = setTimeout(() => {
+                setMensagem("")
+                setTipoMensagem("")
+            }, 2000)
+            return () => clearTimeout(timeout)
+        }
+    }, [mensagem])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-// VALIDAÇÃO DOS DADOS VERIFICANDO SE O USER INSERIU DADOS
+
         if (!nome || !email || !marca_moto || !telefone || !matricula || !BI) {
             setMensagem("❌ Preencha todos os campos obrigatórios.")
+            setTipoMensagem("erro")
             return
-        
         }
-// ENVIANDO OS DADOS RECEBIDO PARA O BACKEND
+
         try {
             const res = await api.post("/register/create", {
-               nome,
-               email,
-               marca_moto,
-               telefone,
-               matricula,
-               BI
-                
+                nome,
+                email,
+                marca_moto,
+                telefone,
+                matricula,
+                BI
             })
-            console.log(res)
 
             if (res.status === 200 || res.status === 201) {
                 setMensagem("✅ Formulário enviado com sucesso!")
+                setTipoMensagem("sucesso")
+                //função que faz o reload quando os dados são enviados
+                setTimeout(() => {
+                    window.location.reload()
+                }, 1000);
             } else {
                 setMensagem(`❌ Erro ao enviar: ${res.statusText}`)
+                setTipoMensagem("erro")
             }
         } catch (error: any) {
             console.error("Erro ao enviar:", error)
             setMensagem("❌ Erro ao enviar o formulário.")
+            setTipoMensagem("erro")
         }
     }
 
     return (
-        <div className="w-full h-screen bg-[#142b63] justify-center items-center flex flex-col gap-4">
+        <div className="w-full h-screen bg-[#142b63] justify-center items-center flex flex-col gap-4 relative">
+            {/* Mensagem flutuante */}
+            {mensagem && (
+                <div className={`fixed top-4 right-4 z-50 px-4 py-2 rounded-xl shadow-lg transition-all duration-300 text-white text-sm font-semibold
+                    ${tipoMensagem === "sucesso" ? "bg-green-500" : "bg-red-500"}`}>
+                    {mensagem}
+                </div>
+            )}
+
             <div className="w-[620px] flex flex-col items-center gap-4">
-                <h2 className="text-4xl font-bold text-white">Torne-se um <span className="text-[#f4be0b]">Bang</span></h2>
+                <h2 className="text-4xl font-bold text-white">
+                    Torne-se um <span className="text-[#f4be0b]">Bang</span>
+                </h2>
                 <p className="w-[520px] text-center text-[#c2cadbe5]">
                     Preencha os dados abaixo para começar sua jornada como mototaxista legalizado
                 </p>
             </div>
+
             <main className="w-[600px] bg-white rounded-4xl flex flex-col items-center px-4 py-2 gap-4">
-            {/* INICIO DO FORMULÁRIO */}
                 <form className="flex flex-col gap-4 w-full" onSubmit={handleSubmit}>
                     <div className="flex w-full">
                         <div className="w-1/2 flex flex-col gap-4">
@@ -127,16 +153,10 @@ export default function RegisterMotors() {
                     <button
                         type="submit"
                         id="btn"
-                        className="w-full h-10 bg-yellow-600 text-white rounded-3xl cursor-pointer">
+                        className="w-full h-10 bg-yellow-600 text-white rounded-3xl cursor-pointer hover:bg-yellow-500 transition">
                         {isPending ? "Enviando..." : "Enviar"}
                     </button>
-                    {mensagem && (
-                        <p className="text-center font-semibold mt-2 text-sm text-white bg-[#142b63] p-2 rounded-xl">
-                            {mensagem}
-                        </p>
-                    )}
                 </form>
-              {/* FIM  DO FORMULÁRIO */}
                 <div className="w-full bg-yellow-50 h-[100px] rounded-2xl">
                     <NextStepCard />
                 </div>
