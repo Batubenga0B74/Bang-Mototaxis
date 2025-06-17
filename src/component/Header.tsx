@@ -13,6 +13,7 @@ export default function Header() {
           <li>início</li>
           <li>Benefícios</li>
           <li>FAQ</li>
+          <Link href="/All-register">All Regiter</Link>
         </ul>
         <Link href="/Register-motors" className="w-[158px] h-[40px] bg-[#dc2626] flex items-center justify-center rounded-full text-white font-bold text-xs">
             Torne-se Bang

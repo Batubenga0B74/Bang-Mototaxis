@@ -6,7 +6,7 @@
 
 ## 📌 Funcionalidades
 
-- Cadastro de moto-taxistas (dados pessoais, veículo, )
+- Cadastro de moto-taxistas (dados pessoais, veículo, localização)
 - Listagem e pesquisa de moto-taxistas
 - Visualização de perfis individuais
 - Painel administrativo (em desenvolvimento)
@@ -19,8 +19,8 @@
 ### Backend:
 - Node.js + Fastify
 - TypeScript
+- PostgreSQL (ou outro banco configurado)
 - Prisma ORM
-- sqllite
 - Swagger para documentação da API
 
 ### Frontend:
@@ -39,5 +39,10 @@
 
 ---
 
-## 📁 Estrutura de Pastas
+## 🧰 Instalação do Projeto
 
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/seu-usuario/bang.git
+cd bang
