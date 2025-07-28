@@ -46,3 +46,6 @@
 ```bash
 git clone https://github.com/seu-usuario/bang.git
 cd bang
+## npx cypress run --env allure=true
+## allure generate allure-results --clean -o allure-report
+## allure open allure-report

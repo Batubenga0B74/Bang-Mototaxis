@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1810","tests Allregister","","Mon Jul 28 17:21:12 SRET 2025","passed","Mon Jul 28 17:21:14 SRET 2025","","Allregister","",""
+"","657","deve  averiguar a existencia do  main","","Mon Jul 28 17:21:20 SRET 2025","passed","Mon Jul 28 17:21:20 SRET 2025","","Header","",""
+"","770","deve exibir a logo no header","","Mon Jul 28 17:21:10 SRET 2025","passed","Mon Jul 28 17:21:10 SRET 2025","","Header","",""
+"","2460","dastrar com dados valido","","Mon Jul 28 17:21:16 SRET 2025","passed","Mon Jul 28 17:21:18 SRET 2025","","cadastro","",""
