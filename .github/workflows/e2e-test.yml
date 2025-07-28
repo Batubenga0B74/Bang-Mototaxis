@@ -1,5 +1,5 @@
 name: CYPRESS E2E TEST
-
+ 
 on:
   push:
     branches: [main] 
