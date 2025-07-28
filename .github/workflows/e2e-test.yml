@@ -2,11 +2,11 @@ name: CYPRESS E2E TEST
 
 on:
   push:
-    branches: [main]  # ← corrigido: "branches" no plural
+    branches: [main] 
 
 jobs:
   e2e-tests:
-    runs-on: ubuntu-latest  # ← corrigido: indentação
+    runs-on: ubuntu-latest 
 
     steps:
       - name: Checkout do código
